@@ -64,6 +64,7 @@ module.exports = opts => buf => {
 
 	return execa.stdout(jpegoptim, args, {
 		encoding: null,
-		input: buf
+		input: buf,
+		maxBuffer: opts.maxBuffer || 10e6
 	});
 };
